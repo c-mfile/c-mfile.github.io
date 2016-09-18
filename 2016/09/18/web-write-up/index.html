@@ -84,12 +84,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dream-n">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="##WEB 题目 write up
+###php-1点开网页源码是酱紫的
+if (!isset($_GET[‘number’])) die(‘wrong request!’);$number = $_GET[‘number’];$flag=”xxx”;if (strlen($number)&amp;lt;5)    die(“Length of string must more than 5 “);if">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web write up">
+<meta property="og:url" content="http://yoursite.com/2016/09/18/web-write-up/index.html">
 <meta property="og:site_name" content="Dream-n">
+<meta property="og:description" content="##WEB 题目 write up
+###php-1点开网页源码是酱紫的
+if (!isset($_GET[‘number’])) die(‘wrong request!’);$number = $_GET[‘number’];$flag=”xxx”;if (strlen($number)&amp;lt;5)    die(“Length of string must more than 5 “);if">
+<meta property="og:updated_time" content="2016-09-18T12:31:29.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dream-n">
+<meta name="twitter:title" content="web write up">
+<meta name="twitter:description" content="##WEB 题目 write up
+###php-1点开网页源码是酱紫的
+if (!isset($_GET[‘number’])) die(‘wrong request!’);$number = $_GET[‘number’];$flag=”xxx”;if (strlen($number)&amp;lt;5)    die(“Length of string must more than 5 “);if">
 
 
 
@@ -110,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/18/web-write-up/"/>
 
-  <title> Dream-n </title>
+  <title> web write up | Dream-n </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,9 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -212,9 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -234,10 +242,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/18/web-write-up/" itemprop="url">
-                  web write up
-                </a>
+                web write up
               
             
           </h1>
@@ -277,9 +282,7 @@
       
 
       
-        
-          
-            <p>##WEB 题目 write up</p>
+        <p>##WEB 题目 write up</p>
 <p>###php-1<br>点开网页源码是酱紫的</p>
 <p>if (!isset($_GET[‘number’])) die(‘wrong request!’);<br>$number = $_GET[‘number’];<br>$flag=”xxx”;<br>if (strlen($number)&lt;5)<br>    die(“Length of string must more than 5 “);<br>if ($number == 4444)<br>    echo $flag;<br>else<br>    echo “Please try again!”;</p>
 <p>题目里number长度要大于5而且要使number==4444，直接等肯定是不行的，于是就将4444转换成16进制来比较，4444变为0x115c与十进制比较是相同的，而且长度还大于5。答案就出来了</p>
@@ -308,16 +311,20 @@
 <p>$flag = “xxx”;<br>extract($_GET);<br>if(isset($gift))<br>{<br>    $content=trim($flag);<br>    if($gift===$content) {<br>        echo “flag{}”;<br>    }<br>    else{<br>        echo “Oh…”;<br>    }<br>}<br>else {<br>    echo “Give you a mysterious gift! Hahaha…”;<br>}</p>
 <p>用变量覆盖gift=&amp;flag</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -328,16 +335,15 @@
 
       
       
-        <div class="post-eof"></div>
-      
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -345,6 +351,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -364,8 +374,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/av.jpeg"
@@ -401,6 +420,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -504,6 +534,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
