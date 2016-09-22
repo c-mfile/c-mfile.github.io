@@ -172,7 +172,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -182,7 +182,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -248,7 +248,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-09-18T20:23:21+08:00" content="2016-09-18">
               2016-09-18
             </time>
@@ -288,20 +288,16 @@
 <h3 id="php-3"><a href="#php-3" class="headerlink" title="php-3"></a>php-3</h3><p>源码</p>
 <p>$one = ord(‘1’);<br>$nine = ord(‘9’);<br>$flag = ‘xxx’;<br>if(isset($_GET[‘key’]))<br>{<br>    $number = $_GET[‘key’];<br>    for ($i = 0; $i &lt; strlen($number); $i++)<br>    {<br>        $digit = ord($number{$i});<br>        if (($digit &gt;= $one) &amp;&amp; ($digit &lt;= $nine))<br>            return False;<br>    }<br>    if ($number == ‘11259375’)<br>        echo $flag;<br>}<br>else<br>    echo “I’m sorry things didn’t work out…It’s just what it’s meant to be.Paul,forget everything else,your destiny still awaits.—《Kung Fu Panda》”;</p>
 <p>　　前面不让输入数字但是最后要与数字比较，就用16进制112359375转换之后正好是abcdef，让key=0xabcdef就得出答案了</p>
-<p>###　php-4</p>
-<p>源码</p>
+<h3 id="php-4"><a href="#php-4" class="headerlink" title="php-4"></a>php-4</h3><p>源码</p>
 <p>$flag = “xxx”;<br>if (isset($_GET[‘name’]) and isset($_GET[‘password’]))<br>{<br>     if ($_GET[‘name’] == $_GET[‘password’])<br>        print ‘Your password can not be your name.’;<br>    else if (md5($_GET[‘name’]) === md5($_GE[‘password’]))<br>        die($flag);<br>    else<br>        print ‘Invalid password’;<br>}</p>
 <p>　　题目中name和password不能相同但md5值相同时才能出答案，于是使用name[]=1和password[]=2来进行比较，此时name和password的值不相同但是MD5均为0</p>
-<p>###　php-5</p>
-<p>源码</p>
+<h3 id="php-5"><a href="#php-5" class="headerlink" title="php-5"></a>php-5</h3><p>源码</p>
 <p>$pass=@$_POST[‘pass’];<br>$pass1=<strong><strong><em>*</em></strong></strong>;<br>if(isset($pass))<br>{<br>if(@!strcmp($pass,$pass1))<br>{echo “flag:flag{$pass1}”; }<br>else<br>{echo “the pass is wrong!”; }<br>}   else  {<br>echo “please input pass!”; } </p>
 <p>先去查了查strcmp这个函数，发现它是比较两个字符串的，比较方法是若str1=str2，则返回零；若str1<str2，则返回负数；若str1>str2，则返回正数。<br>那么pass和pass1相同时就会出来答案…将pass以一个数组的方式传入，pass[]=1234，用浏览器里的enable post data选项传进去就可以了</str2，则返回负数；若str1></p>
-<p>###　RegexMini</p>
-<p>源码</p>
+<h3 id="RegexMini"><a href="#RegexMini" class="headerlink" title="RegexMini"></a>RegexMini</h3><p>源码</p>
 <p>$flag = “xxx”;<br>if (!isset($_GET[‘username’]))<br>    die(“request error!”);<br>if (!preg_match(‘/^[a-zA-Z0-9]{1,5}$/‘, $_GET[‘username’]))<br>    die(“username is invalid”);<br>if (strlen($_GET[‘username’]) &gt; 5)<br>    echo $flag;<br>else<br>    echo “username must long enough!”;</p>
 <p>　　正则表达式，username可以是小写字母或数字任意的5个以内的组合，但是只有在长度大于5时flag才会出现，这时候就可以用绕过。用%00绕过，%00相当于一个空字符，它后面的会被忽略。username=1234%00a就能得出答案</p>
-<p>###　gift</p>
-<p>点开之后什么也没有..就用文件备份，.bak,出来一个空白页面，看源码</p>
+<h3 id="gift"><a href="#gift" class="headerlink" title="gift"></a>gift</h3><p>点开之后什么也没有..就用文件备份，.bak,出来一个空白页面，看源码</p>
 <p>$flag = “xxx”;<br>extract($_GET);<br>if(isset($gift))<br>{<br>    $content=trim($flag);<br>    if($gift===$content) {<br>        echo “flag{}”;<br>    }<br>    else{<br>        echo “Oh…”;<br>    }<br>}<br>else {<br>    echo “Give you a mysterious gift! Hahaha…”;<br>}</p>
 <p>　　用变量覆盖gift=&amp;flag</p>
 
@@ -374,7 +370,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -421,7 +417,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
