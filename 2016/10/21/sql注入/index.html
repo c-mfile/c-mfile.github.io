@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="一般的注入语句">
+<meta name="description" content="一般的注入语句select * （username/password） from table where id = ‘input’
+mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * fro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql注入">
 <meta property="og:url" content="http://yoursite.com/2016/10/21/sql注入/index.html">
 <meta property="og:site_name" content="Dream-n">
-<meta property="og:description" content="一般的注入语句">
-<meta property="og:updated_time" content="2016-10-26T11:40:24.436Z">
+<meta property="og:description" content="一般的注入语句select * （username/password） from table where id = ‘input’
+mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * fro">
+<meta property="og:updated_time" content="2016-10-27T09:00:10.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql注入">
-<meta name="twitter:description" content="一般的注入语句">
+<meta name="twitter:description" content="一般的注入语句select * （username/password） from table where id = ‘input’
+mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * fro">
 
 
 
@@ -174,7 +177,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -184,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -247,7 +250,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-10-21T23:40:48+08:00" content="2016-10-21">
               2016-10-21
             </time>
@@ -276,8 +279,8 @@
       
 
       
-        <h4 id="一般的注入语句"><a href="#一般的注入语句" class="headerlink" title="一般的注入语句"></a>一般的注入语句</h4><a id="more"></a>
-<p>select * （username/password） from table where id = ‘input’</p>
+        <a id="more"></a>
+<h4 id="一般的注入语句"><a href="#一般的注入语句" class="headerlink" title="一般的注入语句"></a>一般的注入语句</h4><p>select * （username/password） from table where id = ‘input’</p>
 <h4 id="mysql常用指令"><a href="#mysql常用指令" class="headerlink" title="mysql常用指令"></a>mysql常用指令</h4><p>mysql -u 用户名 -p 用户密码：登录mysql；<br>show databases：显示数据库名；<br>use security使用security数据库；<br>show tables:显示表名；<br>desc table:查看表的内容；<br>select * from users 查看users中的所有数据；</p>
 <h4 id="一些常用的sql命令"><a href="#一些常用的sql命令" class="headerlink" title="一些常用的sql命令"></a>一些常用的sql命令</h4><p>Order by 对于结果集进行排序；<br>Select 用于从表中选取数据；<br>Union select 用于合并两个或多个select语句的结果集；<br>Concat 返回字符串连接的结果；</p>
 <h4 id="一些常用的函数"><a href="#一些常用的函数" class="headerlink" title="一些常用的函数"></a>一些常用的函数</h4><p>count()：统计元祖的个数，相当于求和；<br>rand():用于产生一个1~0之间的随机数；<br>floor()：向下取整；<br>group by :根据我们想要的原则对结果进行分组；<br>group_concat()：group_concat()会计算哪些行属于同一组，将属于同一组的列显示出来。要返回哪些列，由函数参数(就是字段名)决定。分组必须有个标准，就是根据group by指定的列进行分组。【其实也就是个连接函数】。<br>outfile():使用select ….into outfile语句将表的内容导出成一个文本文件<br>select [列名] from table[where 语句]….into outfile ’目标文件’ [option]</p>
@@ -410,10 +413,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -430,7 +433,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -440,7 +443,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -495,7 +498,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
