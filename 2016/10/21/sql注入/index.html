@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="一般的注入语句select * （username/password） from table where id = ‘input’
-mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * fro">
+<meta name="description" content="sql注入的总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql注入">
 <meta property="og:url" content="http://yoursite.com/2016/10/21/sql注入/index.html">
 <meta property="og:site_name" content="Dream-n">
-<meta property="og:description" content="一般的注入语句select * （username/password） from table where id = ‘input’
-mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * fro">
-<meta property="og:updated_time" content="2016-10-27T09:00:10.102Z">
+<meta property="og:description" content="sql注入的总结">
+<meta property="og:updated_time" content="2016-10-27T09:05:00.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql注入">
-<meta name="twitter:description" content="一般的注入语句select * （username/password） from table where id = ‘input’
-mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databases：显示数据库名；use security使用security数据库；show tables:显示表名；desc table:查看表的内容；select * fro">
+<meta name="twitter:description" content="sql注入的总结">
 
 
 
@@ -177,7 +174,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -187,7 +184,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -250,7 +247,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-10-21T23:40:48+08:00" content="2016-10-21">
               2016-10-21
             </time>
@@ -279,7 +276,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
       
 
       
-        <a id="more"></a>
+        <p>sql注入的总结<br><a id="more"></a></p>
 <h4 id="一般的注入语句"><a href="#一般的注入语句" class="headerlink" title="一般的注入语句"></a>一般的注入语句</h4><p>select * （username/password） from table where id = ‘input’</p>
 <h4 id="mysql常用指令"><a href="#mysql常用指令" class="headerlink" title="mysql常用指令"></a>mysql常用指令</h4><p>mysql -u 用户名 -p 用户密码：登录mysql；<br>show databases：显示数据库名；<br>use security使用security数据库；<br>show tables:显示表名；<br>desc table:查看表的内容；<br>select * from users 查看users中的所有数据；</p>
 <h4 id="一些常用的sql命令"><a href="#一些常用的sql命令" class="headerlink" title="一些常用的sql命令"></a>一些常用的sql命令</h4><p>Order by 对于结果集进行排序；<br>Select 用于从表中选取数据；<br>Union select 用于合并两个或多个select语句的结果集；<br>Concat 返回字符串连接的结果；</p>
@@ -413,10 +410,10 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -433,7 +430,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -443,7 +440,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -498,7 +495,7 @@ mysql常用指令mysql -u 用户名 -p 用户密码：登录mysql；show databas
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
