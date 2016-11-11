@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="write up," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="web题的write up">
+<meta name="description" content="这次真的只是知识点的总结，嗯，其实就是记一记我不知道的东西。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="web write up">
-<meta property="og:url" content="http://yoursite.com/2016/09/18/web-write-up/index.html">
+<meta property="og:title" content="南邮ctf">
+<meta property="og:url" content="http://yoursite.com/2016/11/11/南邮/index.html">
 <meta property="og:site_name" content="Dream-n">
-<meta property="og:description" content="web题的write up">
-<meta property="og:updated_time" content="2016-10-27T09:04:45.251Z">
+<meta property="og:description" content="这次真的只是知识点的总结，嗯，其实就是记一记我不知道的东西。">
+<meta property="og:updated_time" content="2016-11-11T14:45:59.443Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web write up">
-<meta name="twitter:description" content="web题的write up">
+<meta name="twitter:title" content="南邮ctf">
+<meta name="twitter:description" content="这次真的只是知识点的总结，嗯，其实就是记一记我不知道的东西。">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/18/web-write-up/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/11/南邮/"/>
 
-  <title> web write up | Dream-n </title>
+  <title> 南邮ctf | Dream-n </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +236,7 @@
             
             
               
-                web write up
+                南邮ctf
               
             
           </h1>
@@ -248,8 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T20:23:21+08:00" content="2016-09-18">
-              2016-09-18
+            <time itemprop="dateCreated" datetime="2016-11-11T00:00:00+08:00" content="2016-11-11">
+              2016-11-11
             </time>
           </span>
 
@@ -276,28 +276,37 @@
       
 
       
-        <p>web题的write up<br><a id="more"></a></p>
-<h3 id="php-1"><a href="#php-1" class="headerlink" title="php-1"></a>php-1</h3><p> 点开网页源码是酱紫的</p>
-<p>if (!isset($_GET[‘number’])) die(‘wrong request!’);<br>$number = $_GET[‘number’];<br>$flag=”xxx”;<br>if (strlen($number)&lt;5)<br>    die(“Length of string must more than 5 “);<br>if ($number == 4444)<br>    echo $flag;<br>else<br>    echo “Please try again!”;</p>
-<p>　　题目里number长度要大于5而且要使number==4444，直接等肯定是不行的，于是就将4444转换成16进制来比较，4444变为0x115c与十进制比较是相同的，而且长度还大于5。答案就出来了</p>
-<h3 id="php-2"><a href="#php-2" class="headerlink" title="php-2"></a>php-2</h3><p>这题也是打开源码</p>
-<p>$flag = ‘xxx’;<br>if (isset($_GET[‘which’]))<br>{<br>    $which = $_GET[‘which’];<br>    if ($which &gt; 0 or $which == NULL) die(‘lalala,come on!’);<br>    switch($which)<br>    {<br>        case 0:<br>        case 1:<br>        case 2:<br>            echo $flag;<br>            break;<br>        default:<br>            echo “You konw PHP is loosely typed language!”;<br>    }<br>}</p>
-<p>　　试着用which==2就出来答案了….但后来又试了试只要which后面有两个=就会出来答案，无论==后面跟的是啥…</p>
-<h3 id="php-3"><a href="#php-3" class="headerlink" title="php-3"></a>php-3</h3><p>源码</p>
-<p>$one = ord(‘1’);<br>$nine = ord(‘9’);<br>$flag = ‘xxx’;<br>if(isset($_GET[‘key’]))<br>{<br>    $number = $_GET[‘key’];<br>    for ($i = 0; $i &lt; strlen($number); $i++)<br>    {<br>        $digit = ord($number{$i});<br>        if (($digit &gt;= $one) &amp;&amp; ($digit &lt;= $nine))<br>            return False;<br>    }<br>    if ($number == ‘11259375’)<br>        echo $flag;<br>}<br>else<br>    echo “I’m sorry things didn’t work out…It’s just what it’s meant to be.Paul,forget everything else,your destiny still awaits.—《Kung Fu Panda》”;</p>
-<p>　　前面不让输入数字但是最后要与数字比较，就用16进制112359375转换之后正好是abcdef，让key=0xabcdef就得出答案了</p>
-<h3 id="php-4"><a href="#php-4" class="headerlink" title="php-4"></a>php-4</h3><p>源码</p>
-<p>$flag = “xxx”;<br>if (isset($_GET[‘name’]) and isset($_GET[‘password’]))<br>{<br>     if ($_GET[‘name’] == $_GET[‘password’])<br>        print ‘Your password can not be your name.’;<br>    else if (md5($_GET[‘name’]) === md5($_GE[‘password’]))<br>        die($flag);<br>    else<br>        print ‘Invalid password’;<br>}</p>
-<p>　　题目中name和password不能相同但md5值相同时才能出答案，于是使用name[]=1和password[]=2来进行比较，此时name和password的值不相同但是MD5均为0</p>
-<h3 id="php-5"><a href="#php-5" class="headerlink" title="php-5"></a>php-5</h3><p>源码</p>
-<p>$pass=@$_POST[‘pass’];<br>$pass1=<strong><strong><em>*</em></strong></strong>;<br>if(isset($pass))<br>{<br>if(@!strcmp($pass,$pass1))<br>{echo “flag:flag{$pass1}”; }<br>else<br>{echo “the pass is wrong!”; }<br>}   else  {<br>echo “please input pass!”; } </p>
-<p>先去查了查strcmp这个函数，发现它是比较两个字符串的，比较方法是若str1=str2，则返回零；若str1<str2，则返回负数；若str1>str2，则返回正数。<br>那么pass和pass1相同时就会出来答案…将pass以一个数组的方式传入，pass[]=1234，用浏览器里的enable post data选项传进去就可以了</str2，则返回负数；若str1></p>
-<h3 id="RegexMini"><a href="#RegexMini" class="headerlink" title="RegexMini"></a>RegexMini</h3><p>源码</p>
-<p>$flag = “xxx”;<br>if (!isset($_GET[‘username’]))<br>    die(“request error!”);<br>if (!preg_match(‘/^[a-zA-Z0-9]{1,5}$/‘, $_GET[‘username’]))<br>    die(“username is invalid”);<br>if (strlen($_GET[‘username’]) &gt; 5)<br>    echo $flag;<br>else<br>    echo “username must long enough!”;</p>
-<p>　　正则表达式，username可以是小写字母或数字任意的5个以内的组合，但是只有在长度大于5时flag才会出现，这时候就可以用绕过。用%00绕过，%00相当于一个空字符，它后面的会被忽略。username=1234%00a就能得出答案</p>
-<h3 id="gift"><a href="#gift" class="headerlink" title="gift"></a>gift</h3><p>点开之后什么也没有..就用文件备份，.bak,出来一个空白页面，看源码</p>
-<p>$flag = “xxx”;<br>extract($_GET);<br>if(isset($gift))<br>{<br>    $content=trim($flag);<br>    if($gift===$content) {<br>        echo “flag{}”;<br>    }<br>    else{<br>        echo “Oh…”;<br>    }<br>}<br>else {<br>    echo “Give you a mysterious gift! Hahaha…”;<br>}</p>
-<p>　　用变量覆盖gift=&amp;flag</p>
+        <p>这次真的只是知识点的总结，嗯，其实就是记一记我不知道的东西。</p>
+<a id="more"></a>
+<h3 id="MD5碰撞"><a href="#MD5碰撞" class="headerlink" title="MD5碰撞"></a>MD5碰撞</h3><p>在php中MD5值只要是以0e开头的，就与其他0e开头的MD5值相同。</p>
+<p>例如0e开头的有：s1091221200a、s1091221200a、s1665632922a</p>
+<h3 id="aaencode"><a href="#aaencode" class="headerlink" title="aaencode"></a>aaencode</h3><p>颜文字就是aaenocde，类似的编码方式还有brainfuck，是[]+-，还有就是jjencode是有很多$”[]组成的。</p>
+<h3 id="http头伪造"><a href="#http头伪造" class="headerlink" title="http头伪造"></a>http头伪造</h3><p>http的refer头的伪造方法：加上Referer:<a href="https://XXXX。" target="_blank" rel="external">https://XXXX。</a></p>
+<blockquote>
+<p> refer是让服务器判断来源页面的，host客户端指定自己想访问的http服务器的域名/IP地址和端口号。</p>
+</blockquote>
+<h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><p>在文件下载的界面，可以通过进入它的类似于download.php的文件来寻找答案。</p>
+<h3 id="文件包含漏洞"><a href="#文件包含漏洞" class="headerlink" title="文件包含漏洞"></a>文件包含漏洞</h3><p>  %00截断：  /etc/passwd%00</p>
+<p>  路径长度截断：    /etc/passwd/././././././.[…]/./././././.</p>
+<p>  读文件：    index.php?file=/etc/passwd</p>
+<p>  敏感文件：<br>  /root/.ssh/authorized_keys<br>  /root/.ssh/id_rsa<br>  /root/.ssh/id_rsa.keystore<br>  /root/.ssh/id_rsa.pub<br>  /root/.ssh/known_hosts<br>  /etc/shadow<br>  /root/.bash_history<br>  /root/.mysql_history<br>  /proc/self/fd/fd[0-9]* (文件标识符)<br>  /proc/mounts<br>  /proc/config.gz</p>
+<p>  读取php文件：index.php?file=php://filter/read=convert.base64-encode/resource=index.php</p>
+<h3 id="robots-txt"><a href="#robots-txt" class="headerlink" title="robots.txt"></a>robots.txt</h3><p>robots.txt是一个协议，网站通过robots协议告诉搜索引擎什么页面可以抓取，什么页面不可以抓取。</p>
+<p>在ctf中，robots.txt文件经常存放着提示信息。</p>
+<p>题中的一些函数：</p>
+<blockquote>
+<p> mysql_select_db() 函数设置活动的 MySQL 数据库。  如果成功，则该函数返回 true。如果失败，则返回 false。</p>
+<p>   intval() 函数获取变量的整数值，允许以使用特定的进制返回。默认10进制（注:如果参数为整数，则不做任何处理。）</p>
+<p>   mysql_fetch_array() 函数从结果集中取得一行作为关联数组，或数字数组，或二者兼有   返回根据从结果集取得的行生成的数组，如果没有更多行则返回 false。</p>
+<p>   mysql_query() 函数执行一条 MySQL 查询。</p>
+</blockquote>
+<h3 id="00截断"><a href="#00截断" class="headerlink" title="%00截断"></a>%00截断</h3><p>PHP中00截断问题</p>
+<p>主要利用：</p>
+<p>1.上传时路径可控，使用00截断<br>2.文件下载时，00截断绕过白名单检查<br>3.文件包含时，00截断后面限制(主要是本地包含时)<br>4.其它与文件操作有关的地方都可能使用00截断。</p>
+<h3 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h3><p>如果一个数组进行MD5加密，返回的将是null。</p>
+<h3 id="extract-变量覆盖"><a href="#extract-变量覆盖" class="headerlink" title="extract()变量覆盖"></a>extract()变量覆盖</h3><p>extract() 函数从数组中将变量导入到当前的符号表。<br>该函数使用数组键名作为变量名，使用数组键值作为变量值。针对数组中的每个元素，将在当前符号表中创建对应的一个变量。<br>第二个参数 type 用于指定当某个变量已经存在，而数组中又有同名元素时，extract() 函数如何对待这样的冲突。默认的是如果有冲突，则覆盖当前变量。<br>该函数返回成功导入到符号表中的变量数目。</p>
+<h3 id="PHP相关"><a href="#PHP相关" class="headerlink" title="PHP相关"></a>PHP相关</h3><p>eregi()函数与ereg()函数类似，都是比对两个字符串，相同返回true，只是eregi函数不对字母的大小写进行限制。</p>
+<h3 id="X-Forward-for"><a href="#X-Forward-for" class="headerlink" title="X-Forward-for"></a>X-Forward-for</h3><p>为访问者的ip，可以通过改变它的值来改变请求头中的访问者地址。</p>
 
       
     </div>
@@ -318,24 +327,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/write-up/" rel="tag">#write up</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/23/极客大挑战 write up/" rel="next" title="极客大挑战 write up">
+                <i class="fa fa-chevron-left"></i> 极客大挑战 write up
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/21/sql注入/" rel="prev" title="sql注入">
-                sql注入 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -442,7 +445,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#php-1"><span class="nav-number">1.</span> <span class="nav-text">php-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-2"><span class="nav-number">2.</span> <span class="nav-text">php-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-3"><span class="nav-number">3.</span> <span class="nav-text">php-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-4"><span class="nav-number">4.</span> <span class="nav-text">php-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-5"><span class="nav-number">5.</span> <span class="nav-text">php-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegexMini"><span class="nav-number">6.</span> <span class="nav-text">RegexMini</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gift"><span class="nav-number">7.</span> <span class="nav-text">gift</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MD5碰撞"><span class="nav-number">1.</span> <span class="nav-text">MD5碰撞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aaencode"><span class="nav-number">2.</span> <span class="nav-text">aaencode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http头伪造"><span class="nav-number">3.</span> <span class="nav-text">http头伪造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件下载"><span class="nav-number">4.</span> <span class="nav-text">文件下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件包含漏洞"><span class="nav-number">5.</span> <span class="nav-text">文件包含漏洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#robots-txt"><span class="nav-number">6.</span> <span class="nav-text">robots.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#00截断"><span class="nav-number">7.</span> <span class="nav-text">%00截断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD5"><span class="nav-number">8.</span> <span class="nav-text">MD5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extract-变量覆盖"><span class="nav-number">9.</span> <span class="nav-text">extract()变量覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP相关"><span class="nav-number">10.</span> <span class="nav-text">PHP相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#X-Forward-for"><span class="nav-number">11.</span> <span class="nav-text">X-Forward-for</span></a></li></ol></div>
             
           </div>
         </section>
