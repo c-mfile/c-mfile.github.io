@@ -93,6 +93,33 @@ trim() 函数移除字符串两端的空白字符以及其他的预定义字符
 <h3 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h3><p>一些常见的上传绕过的方式<br><a href="http://www.legendsec.org/1665.html" target="_blank" rel="external">http://www.legendsec.org/1665.html</a></p>
 <h3 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp()"></a>strcmp()</h3><p>数组可以绕过strcmp函数的验证。strcmp(array,string)<br>?string[]就可以绕过。</p>
 <h3 id="查询历史"><a href="#查询历史" class="headerlink" title="查询历史"></a>查询历史</h3><p>在Linux下使用history命令可以查询到之前输入的所有命令。<br>/.bash_history 在网页后面加它可以查询到原网站的历史。</p>
+<h3 id="MD5密文的恢复"><a href="#MD5密文的恢复" class="headerlink" title="MD5密文的恢复"></a>MD5密文的恢复</h3><pre><code>import hashlib
+
+src1=&quot;TASC&quot;
+src2=&quot;O3RJMV&quot;
+src3=&quot;WDJKX&quot;
+src4=&quot;ZM&quot;
+for a in range(65,90):
+    for b in range(65,90):
+        for c in range(65,90):
+            src=src1+chr(a)+src2+chr(b)+src3+chr(c)+src4
+            m=hashlib.md5()
+            m.update(src)
+            m1=m.hexdigest()
+            if(m1[0:5]==&apos;e9032&apos; and m1[8:10]==&apos;da&apos;):
+                print(m1)
+</code></pre><h3 id="异或运算"><a href="#异或运算" class="headerlink" title="异或运算"></a>异或运算</h3><pre><code>file_a=open(&apos;明文.txt&apos;,&apos;rb&apos;)  
+file_b=open(&apos;密文.txt&apos;,&apos;rb&apos;)  
+
+a=file_a.read()  
+b=file_b.read()  
+
+s=&apos;&apos;  
+for i,j in zip(a,b):  
+s+=chr(ord(i)^ord(j))  
+print s
+</code></pre><p>zip()函数：依次取出每一个数组的元素，然后组合，如果元素不一致，会被砍到一样长。<br>zip()函数中数组前面如果带星号的话，是上述操作的逆运算。如zip(*a)</p>
+<h3 id="有关wireshark"><a href="#有关wireshark" class="headerlink" title="有关wireshark"></a>有关wireshark</h3><p>都是通过wireshark来过滤包，如http或tcp包来解析找到flag。</p>
 
       
     </div>
